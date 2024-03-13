@@ -36,7 +36,7 @@ export default {
     }
   },
   entry: {
-    main: [NODE_ENV === 'development' ? './test/index.js' : './src/index.js']
+    main: [NODE_ENV === 'development' ? './tests/index.js' : './src/index.js']
   },
   output: {
     filename: getFilename('umd'),
@@ -84,7 +84,7 @@ export default {
     // 主页面入口index.html
     NODE_ENV === 'development' && new HtmlWebpackPlugin({                             
       filename: 'index.html',
-      template: './test/template.ejs'
+      template: './tests/template.ejs'
     }),
     // 配置全局变量
     NODE_ENV === 'development' && new webpack.DefinePlugin({
