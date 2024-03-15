@@ -1,13 +1,23 @@
 {
   "name": "@easytool/eslint-config",
   "version": "0.1.26",
+  "description": "easytool eslint config.",
   "main": "index.js",
   "parcel": {
     "externals": [],
     "exports": "auto",
     "globals": {}
   },
-  "description": "通用eslint配置文件.",
+  "license": "MIT",
+  "author": "Jay Liu",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/stephenliu1944/easytool-eslint-config.git"
+  },
+  "homepage": "https://github.com/stephenliu1944/easytool-eslint-config",
+  "bugs": {
+    "url": "https://github.com/stephenliu1944/easytool-eslint-config/issues"
+  },
   "files": [
     "index.js",
     "dev.js",
@@ -30,10 +40,11 @@
     "lint-js": "eslint -c .eslintrc.prod.js src/ --ext .js,.jsx --fix",
     "test": "jest",
     "package": "cross-env NODE_ENV=production rollup -c rollup.config.js",
-    "publish-prerelease": "npm run package && gulp version-prerelease && npm publish",
-    "publish-patch": "npm run package && gulp version-patch && npm publish",
-    "publish-minor": "npm run package && gulp version-minor && npm publish",
-    "publish-major": "npm run package && gulp version-major && npm publish",
+    "publish:current": "npm run package && npm publish --access=public",
+    "publish-prerelease": "npm run package && gulp version-prerelease && npm publish --access=public",
+    "publish-patch": "npm run package && gulp version-patch && npm publish --access=public",
+    "publish-minor": "npm run package && gulp version-minor && npm publish --access=public",
+    "publish-major": "npm run package && gulp version-major && npm publish --access=public",
     "unpublish": "npm unpublish -f",
     "git-push": "gulp git-push"
   },
